@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Orders</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #444;
+            color: #8f8;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background-color: #032;
+            border: 1px solid #8f8;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            width: 150px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+        }
+        .btn-add {
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-add:hover {
+            background-color: #0d0;
+        }
+        .btn-exit {
+            background-color: #f00;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin: 20px auto;
+            display: block;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+        .search-container input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #8f8;
+            border-radius: 5px;
+        }
+        .search-container button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #0f0;
+            color: #000;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .search-container button:hover {
+            background-color: #0d0;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for items...">
+        <button onclick="searchItems()">Search by ID</button>
+    </div>
+
+    <div class="header">Menu - Burgers</div>
+    <div class="menu" id="menuItems">
+        <div class="card">
+            <img src="images/pexels-valeriya-1639557.jpg" alt="Item Image">
+            <p>ID: B1001</p>
+            <p>Classic Burger (Large)</p>
+            <p>Rs. 750.00</p>
+            <button class="btn-add" onclick="addToCart('B1001')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639562.jpg" alt="Item Image">
+            <p>ID: B1002</p>
+            <p>Classic Burger (Regular)</p>
+            <p>Rs. 1500.00</p>
+            <button class="btn-add" onclick="addToCart('B1002')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639557.jpg" alt="Item Image">
+            <p>ID: B1003</p>
+            <p>Turkey Burger</p>
+            <p>Rs. 1600.00</p>
+            <button class="btn-add" onclick="addToCart('B1003')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639562.jpg" alt="Item Image">
+            <p>ID: B1004</p>
+            <p>Chicken Burger (Large)</p>
+            <p>Rs. 1400.00</p>
+            <button class="btn-add" onclick="addToCart('B1004')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639557.jpg" alt="Item Image">
+            <p>ID: B1005</p>
+            <p>Chicken Burger (Regular)</p>
+            <p>Rs. 800.00</p>
+            <button class="btn-add" onclick="addToCart('B1005')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639562.jpg" alt="Item Image">
+            <p>ID: B1006</p>
+            <p>Cheese Burger (Large)</p>
+            <p>Rs. 1000.00</p>
+            <button class="btn-add" onclick="addToCart('B1006')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639557.jpg" alt="Item Image">
+            <p>ID: B1007</p>
+            <p>Cheese Burger (Regular)</p>
+            <p>Rs. 600.00</p>
+            <button class="btn-add" onclick="addToCart('B1007')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639562.jpg" alt="Item Image">
+            <p>ID: B1008</p>
+            <p>Bacon Burger</p>
+            <p>Rs. 650.00</p>
+            <button class="btn-add" onclick="addToCart('B1008')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639557.jpg" alt="Item Image">
+            <p>ID: B1009</p>
+            <p>Shawarma Burger</p>
+            <p>Rs. 800.00</p>
+            <button class="btn-add" onclick="addToCart('B1009')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639562.jpg" alt="Item Image">
+            <p>ID: B1010</p>
+            <p>Olive Burger</p>
+            <p>Rs. 1800.00</p>
+            <button class="btn-add" onclick="addToCart('B1010')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639562.jpg" alt="Item Image">
+            <p>ID: B1012</p>
+            <p>Double Cheese Burger</p>
+            <p>Rs. 1250.00</p>
+            <button class="btn-add" onclick="addToCart('B1012')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639557.jpg" alt="Item Image">
+            <p>ID: B1013</p>
+            <p>Crispy Chicken Burger (Regular)</p>
+            <p>Rs. 1200.00</p>
+            <button class="btn-add" onclick="addToCart('B1013')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639557.jpg" alt="Item Image">
+            <p>ID: B1014</p>
+            <p>Crispy Chicken Burger (Large)</p>
+            <p>Rs. 1600.00</p>
+            <button class="btn-add" onclick="addToCart('B1014')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-valeriya-1639562.jpg" alt="Item Image">
+            <p>ID: B1015</p>
+            <p>Paneer Burger</p>
+            <p>Rs. 900.00</p>
+            <button class="btn-add" onclick="addToCart('B1015')">Add to Cart</button>
+        </div>
+    </div>
+    <div class="header">Menu - Submarines</div>
+    <div class="menu">
+        <div class="card">
+            <img src="images/pexels-bgsub2983101(2).jpg" alt="Item Image">
+            <p>ID: B1016</p>
+            <p>Crispy Chicken Submarine (Large)</p>
+            <p>Rs. 1200.00</p>
+            <button class="btn-add" onclick="addToCart('B1016')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-bgsub2983101(1).jpg" alt="Item Image">
+            <p>ID: B1017</p>
+            <p>Chicken Submarine (Large)</p>
+            <p>Rs. 1000.00</p>
+            <button class="btn-add" onclick="addToCart('B1017')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-bgsub2983101(3).jpg" alt="Item Image">
+            <p>ID: B1018</p>
+            <p>Beef Submarine (Large)</p>
+            <p>Rs. 1500.00</p>
+            <button class="btn-add" onclick="addToCart('B1018')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-bgsub2983101(2).jpg" alt="Item Image">
+            <p>ID: B1019</p>
+            <p>Crispy Chicken Submarine (Regular)</p>
+            <p>Rs. 800.00</p>
+            <button class="btn-add" onclick="addToCart('B1019')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-bgsub2983101(1).jpg" alt="Item Image">
+            <p>ID: B1020</p>
+            <p>Chicken Submarine (Regular)</p>
+            <p>Rs. 600.00</p>
+            <button class="btn-add" onclick="addToCart('B1020')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/pexels-bgsub2983101(3).jpg" alt="Item Image">
+            <p>ID: B1021</p>
+            <p>Beef Submarine (Regular)</p>
+            <p>Rs. 1200.00</p>
+            <button class="btn-add" onclick="addToCart('B1021')">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="header">Menu - Kottu</div>
+    <div class="menu">
+        <div class="card">
+            <img src="images/kottu-1.jpg" alt="Item Image">
+            <p>ID: B1022</p>
+            <p>Chicken Kottu (Regular)</p>
+            <p>Rs. 600.00</p>
+            <button class="btn-add" onclick="addToCart('B1022')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/kottu-2.jpg" alt="Item Image">
+            <p>ID: B1023</p>
+            <p>Chicken Kottu (Large)</p>
+            <p>Rs. 1200.00</p>
+            <button class="btn-add" onclick="addToCart('B1023')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/kottu-3.jpg" alt="Item Image">
+            <p>ID: B1024</p>
+            <p>Beef Kottu (Regular)</p>
+            <p>Rs. 800.00</p>
+            <button class="btn-add" onclick="addToCart('B1024')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/kottu-1.jpg" alt="Item Image">
+            <p>ID: B1025</p>
+            <p>Beef Kottu (Large)</p>
+            <p>Rs. 1400.00</p>
+            <button class="btn-add" onclick="addToCart('B1025')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/kottu-2.jpg" alt="Item Image">
+            <p>ID: B1026</p>
+            <p>Prawn Kottu (Regular)</p>
+            <p>Rs. 1000.00</p>
+            <button class="btn-add" onclick="addToCart('B1026')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/kottu-3.jpg" alt="Item Image">
+            <p>ID: B1027</p>
+            <p>Prawn Kottu (Large)</p>
+            <p>Rs. 1500.00</p>
+            <button class="btn-add" onclick="addToCart('B1027')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/kottu-1.jpg" alt="Item Image">
+            <p>ID: B1028</p>
+            <p>Cheese Kottu (Regular)</p>
+            <p>Rs. 800.00</p>
+            <button class="btn-add" onclick="addToCart('B1028')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="images/kottu-2.jpg" alt="Item Image">
+            <p>ID: B1029</p>
+            <p>Cheese Kottu (Large)</p>
+            <p>Rs. 1400.00</p>
+            <button class="btn-add" onclick="addToCart('B1029')">Add to Cart</button>
+        </div>
+    </div>
+
+    <button class="btn-exit" onclick="window.location.href='employee.html'">Exit</button>
+
+    <script>
+        function searchItems() {
+            const input = document.getElementById('searchInput').value.toUpperCase();
+            const menuItems = document.getElementById('menuItems');
+            const cards = menuItems.getElementsByClassName('card');
+
+            for (let i = 0; i < cards.length; i++) {
+                const id = cards[i].getElementsByTagName('p')[0].innerText.toUpperCase();
+                if (id.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+        function addToCart(itemId) {
+            const itemDetails = {
+                "B1001": { name: "Classic Burger (Large)", price: 750.00 },
+                "B1002": { name: "Classic Burger (Regular)", price: 1500.00 },
+                "B1003": { name: "Turkey Burger", price: 1600.00 },
+                "B1004": { name: "Chicken Burger (Large)", price: 1400.00 },
+                "B1005": { name: "Chicken Burger (Regular)", price: 800.00 },
+                "B1006": { name: "Cheese Burger (Large)", price: 1000.00 },
+                "B1007": { name: "Cheese Burger (Regular)", price: 600.00 },
+                "B1008": { name: "Bacon Burger", price: 650.00 },
+                "B1009": { name: "Shawarma Burger", price: 800.00 },
+                "B1010": { name: "Olive Burger", price: 1800.00 },
+                "B1012": { name: "Double Cheese Burger", price: 1250.00 },
+                "B1013": { name: "Crispy Chicken Burger (Regular)", price: 1200.00 },
+                "B1014": { name: "Crispy Chicken Burger (Large)", price: 1600.00 },
+                "B1015": { name: "Paneer Burger", price: 900.00 },
+                "B1016": { name: "Crispy Chicken Submarine (Large)", price: 1200.00 },
+                "B1017": { name: "Chicken Submarine (Large)", price: 1000.00 },
+                "B1018": { name: "Beef Submarine (Large)", price: 1500.00 },
+                "B1019": { name: "Crispy Chicken Submarine (Regular)", price: 800.00 },
+                "B1020": { name: "Chicken Submarine (Regular)", price: 600.00 },
+                "B1021": { name: "Beef Submarine (Regular)", price: 1200.00 },
+                "B1022": { name: "Chicken Kottu (Regular)", price: 600.00 },
+                "B1023": { name: "Chicken Kottu (Large)", price: 1200.00 },
+                "B1024": { name: "Beef Kottu (Regular)", price: 800.00 },
+                "B1025": { name: "Beef Kottu (Large)", price: 1400.00 },
+                "B1026": { name: "Prawn Kottu (Regular)", price: 1000.00 },
+                "B1027": { name: "Prawn Kottu (Large)", price: 1500.00 },
+                "B1028": { name: "Cheese Kottu (Regular)", price: 800.00 },
+                "B1029": { name: "Cheese Kottu (Large)", price: 1400.00 },
+            };
+
+            const selectedItem = itemDetails[itemId];
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(selectedItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${selectedItem.name} has been added to the cart.`);
+        }
+    </script>
+</body>
+</html>

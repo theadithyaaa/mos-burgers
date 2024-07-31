@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS BURGERS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: black;
+        }
+        .carousel-container {
+            position: relative;
+            height: 50vh;
+        }
+        .carousel-inner img {
+            height: 50vh; 
+            object-fit: cover;
+        }
+        .carousel-caption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 20px;
+            color: rgb(245, 106, 0);
+            font-size: 90px;
+            font-weight: bold;
+            z-index: 10; 
+            text-align: left;
+        }
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            height: 50vh; 
+        }
+        .buttons-container .btn {
+            width: 200px;
+            margin: 10px;
+        }
+        .btn-green {
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        }
+        .btn-red {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel-caption">
+            MOS <br>BURGERS
+        </div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="images/pexels-jonathanborba-2983101.jpg" alt="First slide">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="buttons-container">
+        <button class="btn btn-green" onclick="window.location.href='employee.html'">Employee</button>
+        <button class="btn btn-green" onclick="window.location.href='admin.html'">Admin</button>
+        <button class="btn btn-red" onclick="window.location.href='exit.html'">Exit</button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-9NDZNf01GR65XCq6hMC2hZK5SzZY1y2XrfZkLRZZiTX/jpFJSTLZTXbuGndt+5YF" crossorigin="anonymous"></script>
+</body>
+</html>
